@@ -2,5 +2,6 @@
   "manifest_version": 3,
   "name": "Truthmosphere",
   "version": "1.0.0",
-  "action": { "default_popup": "index.html" }
+  "action": { "default_popup": "index.html" },
+  "permissions": ["scripting", "activeTab"]
 }
