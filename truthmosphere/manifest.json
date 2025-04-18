@@ -3,5 +3,11 @@
   "name": "Truthmosphere",
   "version": "1.0.0",
   "action": { "default_popup": "index.html" },
-  "permissions": ["scripting", "activeTab"]
+  "permissions": ["scripting", "activeTab"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["src/content/content.ts"]
+    }
+  ]
 }
