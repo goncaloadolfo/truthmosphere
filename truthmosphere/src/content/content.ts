@@ -49,7 +49,7 @@ const setupVerifiedIcon = (verified: boolean): HTMLDivElement => {
   iconContainer.style.color = 'white'
   iconContainer.style.fontWeight = 'bold'
   iconContainer.style.top = '10px'
-  iconContainer.style.right = '10px'
+  iconContainer.style.right = '-30px'
   iconContainer.style.zIndex = '9999'
   iconContainer.textContent = verified ? '✔' : '✖'
 
