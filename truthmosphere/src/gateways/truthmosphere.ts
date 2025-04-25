@@ -36,7 +36,7 @@ const classifyContent = async (
   content: string
 ): Promise<FactPredictionResult> => {
   return {
-    verificationResult: false,
+    verificationResult: true,
   }
 }
 

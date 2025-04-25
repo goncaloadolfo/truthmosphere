@@ -84,38 +84,48 @@ const Popup = () => {
   }
 
   return (
-    <div className="flex flex-col gap-4 w-3xs p-4 rounded-sm">
-      {truthfull ? (
-        <Text fontSize={4} fontWeight="bold">
-          Truthfull New!
+    <div className="flex flex-col gap-4 w-xs rounded-sm">
+      <div
+        className={`w-full text-center rounded-sm ${truthfull ? 'bg-truthgreen' : 'bg-truthred'}`}
+      >
+        <Text fontSize={4} color={'white'}>
+          {truthfull ? 'Truthfull New!' : 'Truthless New!'}
         </Text>
-      ) : (
-        <>
-          <Text fontSize={4} fontWeight="bold">
-            Truthless New!
+      </div>
+      <div className="bg-truthdarkgrey h-px mx-2" />
+      <div
+        className={`mx-2 ${truthfull ? 'text-truthgreen' : 'text-truthred'}`}
+      >
+        <Text fontSize={3} fontWeight="bold">
+          Criteria
+        </Text>
+        <div className="flex flex-col gap-2 text-truthdarkgrey">
+          <Text fontSize={1}>
+            To be considered truthful, a news article must meet two key
+            criteria:
           </Text>
-          <div>
+          <div className="flex flex-col gap-2 ml-2">
             <Text fontSize={1}>
-              To be considered truthful, a news article must meet two key
-              criteria:
+              <span className={truthfull ? 'text-truthgreen' : 'text-truthred'}>
+                ★
+              </span>{' '}
+              <span className="font-bold">Fact Accuracy</span>: The article
+              should be free from false or misleading information.
             </Text>
-            <div>
-              <Text fontSize={1} ml={3}>
-                1. <span className="font-bold">Fact Accuracy</span>: The article
-                should be free from false or misleading information.
-              </Text>
-              <Text fontSize={1} ml={3}>
-                2. <span className="font-bold">Title Integrity</span>: The title
-                must clearly reflect the content and avoid bias or exaggeration.
-              </Text>
-            </div>
             <Text fontSize={1}>
-              This ensures that both the facts and the headline are reliable and
-              fair.
+              <span className={truthfull ? 'text-truthgreen' : 'text-truthred'}>
+                ★
+              </span>{' '}
+              <span className="font-bold">Title Integrity</span>: The title must
+              clearly reflect the content and avoid bias or exaggeration.
             </Text>
           </div>
-        </>
-      )}
+          <Text fontSize={1}>
+            This ensures that both the facts and the headline are reliable and
+            fair.
+          </Text>
+        </div>
+      </div>
     </div>
   )
 }
