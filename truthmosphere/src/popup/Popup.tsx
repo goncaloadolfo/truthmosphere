@@ -3,7 +3,12 @@ import { Text } from 'rebass'
 import browser from 'webextension-polyfill'
 import TruthmosphereAPI from '../gateways/truthmosphere'
 import { TruthResult } from '../gateways/values'
-import { TruthResultMessage } from '../messages'
+import {
+  DocumentResponse,
+  RequestContent,
+  RequestType,
+  TruthResultMessage,
+} from '../messages'
 
 const Popup = () => {
   const [truthfull, setTruthfull] = useState<boolean | undefined>(undefined)
@@ -19,24 +24,24 @@ const Popup = () => {
       const tabId = currentTab[0].id
 
       // get currentTab page DOM content
-      const pageContent = await browser.scripting.executeScript({
-        target: { tabId: tabId! },
-        func: () => {
-          return document.body.innerHTML
-        },
-      })
+      const contentRequest: RequestContent = { type: RequestType.GET_CONTENT }
+      const contentRes = await browser.tabs.sendMessage(tabId, contentRequest)
+
+      if (!contentRes) {
+        throw new Error('Failed to get page content')
+      }
+      const pageContent = (contentRes as DocumentResponse)?.content
 
       // classify the new
-      const newClassification = await TruthmosphereAPI.classifyNew(
-        pageContent[0].result as string
-      )
+      const newClassification = await TruthmosphereAPI.classifyNew(pageContent)
       const messageResult: TruthResultMessage = {
         headerResult: {
+          selector: newClassification.parseResult.header.selector,
           title: newClassification.parseResult.header.content,
           verificationResult: newClassification.headerResult.verificationResult,
         },
       }
-      browser.tabs.sendMessage(tabId, messageResult)
+      await browser.tabs.sendMessage(tabId, messageResult)
 
       return newClassification
     }
@@ -47,22 +52,8 @@ const Popup = () => {
       .then((result: TruthResult | undefined) => {
         if (result) {
           const headerResult = result.headerResult.verificationResult
-          const contentResult = result.contentResult.predictionResult
-
-          if (!headerResult) {
-            setTruthfull(false)
-            setError('')
-            return
-          }
-
-          if (contentResult.length > 0) {
-            setTruthfull(
-              contentResult.every((content) => content.verificationResult)
-            )
-            return
-          }
-
-          setTruthfull(true)
+          const contentResult = result.contentResult.verificationResult
+          setTruthfull(headerResult && contentResult)
           setError('')
         }
       })

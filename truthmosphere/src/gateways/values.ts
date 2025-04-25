@@ -1,5 +1,5 @@
 interface NewElement {
-  id?: string
+  selector: string
   content: string
 }
 
@@ -12,14 +12,8 @@ interface HeaderVerificationResult {
   verificationResult: boolean
 }
 
-interface FactResult {
-  fact: string
-  newStatement: string
-  verificationResult: boolean
-}
-
 interface FactPredictionResult {
-  predictionResult: FactResult[]
+  verificationResult: boolean
 }
 
 interface TruthResult {
