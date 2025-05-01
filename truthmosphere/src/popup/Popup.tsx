@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { ThreeDots } from 'react-loading-icons'
 import { Text } from 'rebass'
 import browser from 'webextension-polyfill'
 import TruthmosphereAPI from '../gateways/truthmosphere'
@@ -22,14 +23,20 @@ const Popup = () => {
 
     if (currentTab.length > 0 && currentTab[0].id !== undefined) {
       const tabId = currentTab[0].id
+      console.log('tabId', tabId)
 
       // get currentTab page DOM content
-      const contentRequest: RequestContent = { type: RequestType.GET_CONTENT }
-      const contentRes = await browser.tabs.sendMessage(tabId, contentRequest)
-
-      if (!contentRes) {
-        throw new Error('Failed to get page content')
+      let contentRes: DocumentResponse | undefined
+      try {
+        const contentRequest: RequestContent = { type: RequestType.GET_CONTENT }
+        const contentRes = await browser.tabs.sendMessage(tabId, contentRequest)
+        console.log('contentRes', contentRes)
+      } catch (error) {
+        throw new Error(
+          'Unable to get content from current tab, make sure the page is within the domain whitelist.'
+        )
       }
+
       const pageContent = (contentRes as DocumentResponse)?.content
 
       // classify the new
@@ -42,6 +49,7 @@ const Popup = () => {
         },
       }
       await browser.tabs.sendMessage(tabId, messageResult)
+      console.log('messageResult', messageResult)
 
       return newClassification
     }
@@ -58,35 +66,36 @@ const Popup = () => {
         }
       })
       .catch((error) => {
+        console.error('Error:', error)
         setTruthfull(undefined)
-        setError(error)
+        setError(error.message)
       })
   }, [])
 
   if (error) {
     return (
-      <div className="flex flex-col gap-4 w-3xs p-4 rounded-sm">
-        <Text fontSize={3} fontWeight="bold">
-          Something went wrong!
+      <div className="flex flex-col gap-2 w-xs p-1 text-rederrors text-center">
+        <Text fontSize={2} fontWeight={'bold'}>
+          <span className="text-2xl">⚠️</span> Unable to load content from this
+          tab.
         </Text>
+        <Text fontSize={1}>{error}</Text>
       </div>
     )
   }
 
   if (truthfull === undefined) {
     return (
-      <div className="flex flex-col gap-4 w-3xs p-4 rounded-sm">
-        <Text fontSize={3} fontWeight="bold">
-          Loading...
-        </Text>
+      <div className="flex flex-col justify-center items-center w-xs p-4">
+        <ThreeDots stroke="#52C41A" speed={0.75} width={'84px'} />
       </div>
     )
   }
 
   return (
-    <div className="flex flex-col gap-4 w-xs rounded-sm">
+    <div className="flex flex-col gap-4 w-xs">
       <div
-        className={`w-full text-center rounded-sm ${truthfull ? 'bg-truthgreen' : 'bg-truthred'}`}
+        className={`w-full text-center ${truthfull ? 'bg-truthgreen' : 'bg-truthred'}`}
       >
         <Text fontSize={4} color={'white'}>
           {truthfull ? 'Truthfull New!' : 'Truthless New!'}

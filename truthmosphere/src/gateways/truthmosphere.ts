@@ -52,6 +52,10 @@ const classifyNew = async (newHTML: string): Promise<TruthResult> => {
     classifyContent(newContent),
   ])
 
+  // todo: to be removed
+  // sleep for 2 seconds to simulate network delay
+  await new Promise((resolve) => setTimeout(resolve, 2000))
+
   return {
     parseResult,
     headerResult,

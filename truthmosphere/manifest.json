@@ -6,7 +6,7 @@
   "permissions": ["scripting", "activeTab"],
   "content_scripts": [
     {
-      "matches": ["https://www.dn.pt/*/*"],
+      "matches": ["https://www.dn.pt/*"],
       "js": ["src/content/content.ts"]
     }
   ]

@@ -48,9 +48,8 @@ const setupVerifiedIcon = (verified: boolean): HTMLDivElement => {
   iconContainer.style.fontSize = '24px'
   iconContainer.style.color = 'white'
   iconContainer.style.fontWeight = 'bold'
-  iconContainer.style.top = '10px'
-  iconContainer.style.right = '-30px'
-  iconContainer.style.zIndex = '9999'
+  iconContainer.style.top = '0px'
+  iconContainer.style.right = '0px'
   iconContainer.textContent = verified ? '✔' : '✖'
 
   if (verified) {
@@ -113,3 +112,4 @@ const handleMessage = (message: any): Promise<any> => {
 }
 
 browser.runtime.onMessage.addListener(handleMessage)
+console.log('Content script loaded')
