@@ -1,0 +1,56 @@
+# Python bytecode files
+__pycache__/
+*.py[cod]
+
+# Virtual environment
+venv/
+env/
+*.venv/
+
+# Jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# IDE or editor directories and settings
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Distribution / packaging
+*.egg-info/
+dist/
+build/
+*.tar.gz
+
+# Logs and temporary files
+*.log
+*.pot
+*.pyc
+*.pyo
+
+# Test and coverage directories
+.coverage
+nosetests.xml
+coverage.xml
+*.cover
+
+# Flask or Django secrets
+instance/
+*.env
+
+# Hugging Face Datasets (optional)
+datasets/
+
+# Model weights (optional)
+*.h5
+*.pt
+*.bin
+
+# Data files
+*.csv
+*.json
+*.jsonl
+
+# OS-specific files (macOS, Windows)
+.DS_Store
+Thumbs.db
