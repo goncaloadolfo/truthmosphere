@@ -1,0 +1,7 @@
+concurrent_requests: 1
+download_delay: 2
+start_urls:
+  - https://poligrafo.sapo.pt/ultimas/
+allowed_domains:
+  - poligrafo.sapo.pt
+output_file: data/raw/facts_19_06_25.jsonl
