@@ -9,6 +9,8 @@
 
 import os
 
+LOG_LEVEL = "INFO"
+
 BOT_NAME = "truthmosphere"
 
 SPIDER_MODULES = ["truthmosphere.spiders"]
