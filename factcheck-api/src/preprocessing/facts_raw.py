@@ -1,4 +1,3 @@
-import json
 import logging
 
 import pandas as pd
@@ -32,7 +31,7 @@ MONTH_MAPPING = {
 }
 
 
-def preprocess(input_file: str, output_file: str):
+async def preprocess(input_file: str, output_file: str):
     logger.info(f"Preprocessing file: {input_file} to {output_file}")
 
     # assessement
@@ -44,10 +43,7 @@ def preprocess(input_file: str, output_file: str):
     raw_facts_data["publication_datetime"] = raw_facts_data["publication_datetime"].astype(str)
 
     # save to output file, ensure encoding
-    with open(output_file, "w", encoding="utf-8") as f:
-        for record in raw_facts_data.to_dict(orient="records"):
-            json.dump(record, f)
-            f.write("\n")
+    raw_facts_data.to_json(output_file, lines=True, orient="records", force_ascii=False)
 
     logger.info(f"Preprocessing completed. Output saved to {output_file}")
 

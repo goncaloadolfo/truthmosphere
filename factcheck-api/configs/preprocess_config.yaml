@@ -1,3 +1,6 @@
-operation_name: facts_raw_preprocess
-input_file: data/raw/facts_24_07_25.jsonl
-output_file: data/processed/1_facts_24_07_25.jsonl
+operation_name: facts_fix_typos_preprocess
+input_file: data/processed/1_facts_24_07_25.jsonl
+output_file: data/processed/2_facts_24_07_25_fix_typos.jsonl
+fix_typos_model: gpt-4o-mini
+fuzzy_match_threshold: 97
+batch_size: 10
