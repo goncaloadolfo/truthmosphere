@@ -1,3 +1,4 @@
+import asyncio
 import logging
 
 import fire
@@ -31,7 +32,7 @@ def run_preprocess(config_file: str):
         raise ValueError(f"Operation '{operation_name}' is not defined in the preprocessing module.")
 
     preprocess_function = globals()[operation_name]
-    preprocess_function(input_file=input_file, output_file=output_file)
+    asyncio.run(preprocess_function(input_file=input_file, output_file=output_file, **config))
     logger.info(f"Preprocessing completed. Output saved to {output_file}")
 
 
