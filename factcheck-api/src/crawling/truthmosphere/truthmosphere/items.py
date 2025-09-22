@@ -15,3 +15,5 @@ class TruthmosphereItem(scrapy.Item):
     category = scrapy.Field()
     publication_date = scrapy.Field()
     author = scrapy.Field()
+    origin = scrapy.Field()
+    data_file = scrapy.Field()

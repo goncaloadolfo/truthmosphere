@@ -1,7 +1,37 @@
-concurrent_requests: 6
-download_delay: 4
+spider_name: ine_facts
+concurrent_requests: 5
+download_delay: 2
+max_items: 5
+
 start_urls:
-  - https://poligrafo.sapo.pt/ultimas/
+  - https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_destaques&DESTAQUEStema=55536&DESTAQUESpagenumber=1&xlang=pt
+  - https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_destaques&DESTAQUEStema=55505&DESTAQUESpagenumber=1&xlang=pt
+  - https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_destaques&DESTAQUEStema=55523&DESTAQUESpagenumber=1&xlang=pt
+  - https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_destaques&DESTAQUEStema=55448&DESTAQUESpagenumber=1&xlang=pt
+  - https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_destaques&DESTAQUEStema=55545&DESTAQUESpagenumber=1&xlang=pt
+  - https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_destaques&DESTAQUEStema=55565&DESTAQUESpagenumber=1&xlang=pt
+  - https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_destaques&DESTAQUEStema=55529&DESTAQUESpagenumber=1&xlang=pt
+  - https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_destaques&DESTAQUEStema=55534&DESTAQUESpagenumber=1&xlang=pt
+  - https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_destaques&DESTAQUEStema=55557&DESTAQUESpagenumber=1&xlang=pt
+  - https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_destaques&DESTAQUEStema=55554&DESTAQUESpagenumber=1&xlang=pt
+  - https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_destaques&DESTAQUEStema=55445&DESTAQUESpagenumber=1&xlang=pt
+  - https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_destaques&DESTAQUEStema=55579&DESTAQUESpagenumber=1&xlang=pt
+  - https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_destaques&DESTAQUEStema=55535&DESTAQUESpagenumber=1&xlang=pt
+  - https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_destaques&DESTAQUEStema=55453&DESTAQUESpagenumber=1&xlang=pt
+  - https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_destaques&DESTAQUEStema=55483&DESTAQUESpagenumber=1&xlang=pt
+  - https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_destaques&DESTAQUEStema=55547&DESTAQUESpagenumber=1&xlang=pt
+  - https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_destaques&DESTAQUEStema=55574&DESTAQUESpagenumber=1&xlang=pt
+  - https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_destaques&DESTAQUEStema=55480&DESTAQUESpagenumber=1&xlang=pt
+  - https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_destaques&DESTAQUEStema=55466&DESTAQUESpagenumber=1&xlang=pt
+  - https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_destaques&DESTAQUEStema=55507&DESTAQUESpagenumber=1&xlang=pt
+  - https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_destaques&DESTAQUEStema=55499&DESTAQUESpagenumber=1&xlang=pt
+  - https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_destaques&DESTAQUEStema=55538&DESTAQUESpagenumber=1&xlang=pt
+  - https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_destaques&DESTAQUEStema=55527&DESTAQUESpagenumber=1&xlang=pt
+  - https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_destaques&DESTAQUEStema=55481&DESTAQUESpagenumber=1&xlang=pt
+  - https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_destaques&DESTAQUEStema=55488&DESTAQUESpagenumber=1&xlang=pt
+  - https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_destaques&DESTAQUEStema=55581&DESTAQUESpagenumber=1&xlang=pt
+
 allowed_domains:
-  - poligrafo.sapo.pt
-output_file: data/raw/facts_24_07_25.jsonl
+  - www.ine.pt
+
+output_file: data/raw/ine_facts_22_09_25.jsonl
