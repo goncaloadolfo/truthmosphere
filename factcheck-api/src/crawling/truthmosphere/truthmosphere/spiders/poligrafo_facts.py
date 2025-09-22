@@ -3,12 +3,11 @@ import re
 
 import scrapy
 from scrapy.http import Response
+from truthmosphere.items import TruthmosphereItem
 
-from ..items import TruthmosphereItem
 
-
-class FactsSpider(scrapy.Spider):
-    name = "facts"
+class PoligrafoFactsSpider(scrapy.Spider):
+    name = "poligrafo_facts"
 
     start_urls = os.getenv(
         "TRUTHMOSPHERE_CRAWL_START_URLS",
