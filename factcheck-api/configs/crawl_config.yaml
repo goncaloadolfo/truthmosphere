@@ -1,34 +1,36 @@
-spider_name: pordata_facts
-extra_data_folder: /Users/goncaloadolfo/Documents/projects/truthmosphere/factcheck-api/data/raw/pordata_csv/
-
-concurrent_requests: 6
-download_delay: 4
+spider_name: ine_facts
+concurrent_requests: 5
+download_delay: 2
 
 start_urls:
-  - https://www.pordata.pt/pt/estatisticas/agricultura-floresta-e-pescas?page=0
-  - https://www.pordata.pt/pt/estatisticas/ambiente?page=0
-  - https://www.pordata.pt/pt/estatisticas/ciencia-tecnologia-e-inovacao?page=0
-  - https://www.pordata.pt/pt/estatisticas/contas-externas?page=0
-  - https://www.pordata.pt/pt/estatisticas/contas-publicas?page=0
-  - https://www.pordata.pt/pt/estatisticas/contas-publicas?page=0
-  - https://www.pordata.pt/pt/estatisticas/economia?page=0
-  - https://www.pordata.pt/pt/estatisticas/educacao?page=0
-  - https://www.pordata.pt/pt/estatisticas/eleicoes?page=0
-  - https://www.pordata.pt/pt/estatisticas/emprego?page=0
-  - https://www.pordata.pt/pt/estatisticas/empresas?page=0
-  - https://www.pordata.pt/pt/estatisticas/habitacao-e-familias?page=0
-  - https://www.pordata.pt/pt/estatisticas/inflacao?page=0
-  - https://www.pordata.pt/pt/estatisticas/justica-e-seguranca?page=0
-  - https://www.pordata.pt/pt/estatisticas/migracoes?page=0
-  - https://www.pordata.pt/pt/estatisticas/pobreza?page=0
-  - https://www.pordata.pt/pt/estatisticas/populacao?page=0
-  - https://www.pordata.pt/pt/estatisticas/protecao-social?page=0
-  - https://www.pordata.pt/pt/estatisticas/salarios-e-pensoes?page=0
-  - https://www.pordata.pt/pt/estatisticas/saude?page=0
-  - https://www.pordata.pt/pt/estatisticas/transportes?page=0
-  - https://www.pordata.pt/pt/estatisticas/turismo?page=0
+  - https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_destaques&DESTAQUEStema=55536&DESTAQUESpagenumber=1&xlang=pt
+  - https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_destaques&DESTAQUEStema=55505&DESTAQUESpagenumber=1&xlang=pt
+  - https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_destaques&DESTAQUEStema=55523&DESTAQUESpagenumber=1&xlang=pt
+  - https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_destaques&DESTAQUEStema=55448&DESTAQUESpagenumber=1&xlang=pt
+  - https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_destaques&DESTAQUEStema=55545&DESTAQUESpagenumber=1&xlang=pt
+  - https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_destaques&DESTAQUEStema=55565&DESTAQUESpagenumber=1&xlang=pt
+  - https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_destaques&DESTAQUEStema=55529&DESTAQUESpagenumber=1&xlang=pt
+  - https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_destaques&DESTAQUEStema=55534&DESTAQUESpagenumber=1&xlang=pt
+  - https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_destaques&DESTAQUEStema=55557&DESTAQUESpagenumber=1&xlang=pt
+  - https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_destaques&DESTAQUEStema=55554&DESTAQUESpagenumber=1&xlang=pt
+  - https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_destaques&DESTAQUEStema=55445&DESTAQUESpagenumber=1&xlang=pt
+  - https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_destaques&DESTAQUEStema=55579&DESTAQUESpagenumber=1&xlang=pt
+  - https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_destaques&DESTAQUEStema=55535&DESTAQUESpagenumber=1&xlang=pt
+  - https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_destaques&DESTAQUEStema=55453&DESTAQUESpagenumber=1&xlang=pt
+  - https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_destaques&DESTAQUEStema=55483&DESTAQUESpagenumber=1&xlang=pt
+  - https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_destaques&DESTAQUEStema=55547&DESTAQUESpagenumber=1&xlang=pt
+  - https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_destaques&DESTAQUEStema=55574&DESTAQUESpagenumber=1&xlang=pt
+  - https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_destaques&DESTAQUEStema=55480&DESTAQUESpagenumber=1&xlang=pt
+  - https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_destaques&DESTAQUEStema=55466&DESTAQUESpagenumber=1&xlang=pt
+  - https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_destaques&DESTAQUEStema=55507&DESTAQUESpagenumber=1&xlang=pt
+  - https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_destaques&DESTAQUEStema=55499&DESTAQUESpagenumber=1&xlang=pt
+  - https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_destaques&DESTAQUEStema=55538&DESTAQUESpagenumber=1&xlang=pt
+  - https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_destaques&DESTAQUEStema=55527&DESTAQUESpagenumber=1&xlang=pt
+  - https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_destaques&DESTAQUEStema=55481&DESTAQUESpagenumber=1&xlang=pt
+  - https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_destaques&DESTAQUEStema=55488&DESTAQUESpagenumber=1&xlang=pt
+  - https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_destaques&DESTAQUEStema=55581&DESTAQUESpagenumber=1&xlang=pt
 
 allowed_domains:
-  - www.pordata.pt
+  - www.ine.pt
 
-output_file: data/raw/pordata_facts_05_10_25.jsonl
+output_file: data/raw/ine_facts_05_10_25.jsonl
