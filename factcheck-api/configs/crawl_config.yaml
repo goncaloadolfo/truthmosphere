@@ -1,36 +1,27 @@
-spider_name: ine_facts
-concurrent_requests: 5
-download_delay: 2
+spider_name: bpstat_facts
+concurrent_requests: 1
+download_delay: 5
 
 start_urls:
-  - https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_destaques&DESTAQUEStema=55536&DESTAQUESpagenumber=1&xlang=pt
-  - https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_destaques&DESTAQUEStema=55505&DESTAQUESpagenumber=1&xlang=pt
-  - https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_destaques&DESTAQUEStema=55523&DESTAQUESpagenumber=1&xlang=pt
-  - https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_destaques&DESTAQUEStema=55448&DESTAQUESpagenumber=1&xlang=pt
-  - https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_destaques&DESTAQUEStema=55545&DESTAQUESpagenumber=1&xlang=pt
-  - https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_destaques&DESTAQUEStema=55565&DESTAQUESpagenumber=1&xlang=pt
-  - https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_destaques&DESTAQUEStema=55529&DESTAQUESpagenumber=1&xlang=pt
-  - https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_destaques&DESTAQUEStema=55534&DESTAQUESpagenumber=1&xlang=pt
-  - https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_destaques&DESTAQUEStema=55557&DESTAQUESpagenumber=1&xlang=pt
-  - https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_destaques&DESTAQUEStema=55554&DESTAQUESpagenumber=1&xlang=pt
-  - https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_destaques&DESTAQUEStema=55445&DESTAQUESpagenumber=1&xlang=pt
-  - https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_destaques&DESTAQUEStema=55579&DESTAQUESpagenumber=1&xlang=pt
-  - https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_destaques&DESTAQUEStema=55535&DESTAQUESpagenumber=1&xlang=pt
-  - https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_destaques&DESTAQUEStema=55453&DESTAQUESpagenumber=1&xlang=pt
-  - https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_destaques&DESTAQUEStema=55483&DESTAQUESpagenumber=1&xlang=pt
-  - https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_destaques&DESTAQUEStema=55547&DESTAQUESpagenumber=1&xlang=pt
-  - https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_destaques&DESTAQUEStema=55574&DESTAQUESpagenumber=1&xlang=pt
-  - https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_destaques&DESTAQUEStema=55480&DESTAQUESpagenumber=1&xlang=pt
-  - https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_destaques&DESTAQUEStema=55466&DESTAQUESpagenumber=1&xlang=pt
-  - https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_destaques&DESTAQUEStema=55507&DESTAQUESpagenumber=1&xlang=pt
-  - https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_destaques&DESTAQUEStema=55499&DESTAQUESpagenumber=1&xlang=pt
-  - https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_destaques&DESTAQUEStema=55538&DESTAQUESpagenumber=1&xlang=pt
-  - https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_destaques&DESTAQUEStema=55527&DESTAQUESpagenumber=1&xlang=pt
-  - https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_destaques&DESTAQUEStema=55481&DESTAQUESpagenumber=1&xlang=pt
-  - https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_destaques&DESTAQUEStema=55488&DESTAQUESpagenumber=1&xlang=pt
-  - https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_destaques&DESTAQUEStema=55581&DESTAQUESpagenumber=1&xlang=pt
+  - https://bpstat.bportugal.pt/dominios/14
+  - https://bpstat.bportugal.pt/dominios/130
+  - https://bpstat.bportugal.pt/dominios/20
+  - https://bpstat.bportugal.pt/dominios/2
+  - https://bpstat.bportugal.pt/dominios/160
+  - https://bpstat.bportugal.pt/dominios/18
+  - https://bpstat.bportugal.pt/dominios/16
+  - https://bpstat.bportugal.pt/dominios/167
+  - https://bpstat.bportugal.pt/dominios/15
+  - https://bpstat.bportugal.pt/dominios/8
+  - https://bpstat.bportugal.pt/dominios/9
+  - https://bpstat.bportugal.pt/dominios/11
+  - https://bpstat.bportugal.pt/dominios/59
+  - https://bpstat.bportugal.pt/dominios/37
+  - https://bpstat.bportugal.pt/dominios/43
+  - https://bpstat.bportugal.pt/dominios/40
+  - https://bpstat.bportugal.pt/dominios/190
 
 allowed_domains:
-  - www.ine.pt
+  - bpstat.bportugal.pt
 
-output_file: data/raw/ine_facts_05_10_25.jsonl
+output_file: data/raw/bpstat_facts_01_11_25.jsonl
