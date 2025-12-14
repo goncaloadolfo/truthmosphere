@@ -1,4 +1,5 @@
 operation_name: facts_raw_preprocess
-input_file: data/processed/poligrafo_2_facts_24_07_25_fix_typos.jsonl
-output_file: data/processed/poligrafo_3_facts_14_12_25_add_fields.jsonl
-origin: Poligrafo
+input_file: data/raw/ine_facts_05_10_25.jsonl
+output_file: data/processed/ine_1_facts_14_12_25.jsonl
+origin: INE
+date_format: "%d de %B de %Y"
