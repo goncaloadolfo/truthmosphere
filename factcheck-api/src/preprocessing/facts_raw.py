@@ -31,7 +31,7 @@ MONTH_MAPPING = {
 }
 
 
-async def preprocess(input_file: str, output_file: str):
+async def preprocess(input_file: str, output_file: str, origin=None):
     logger.info(f"Preprocessing file: {input_file} to {output_file}")
 
     # assessement
@@ -41,6 +41,12 @@ async def preprocess(input_file: str, output_file: str):
     # publication date
     raw_facts_data["publication_datetime"] = raw_facts_data["publication_date"].apply(parse_pt_datetime)
     raw_facts_data["publication_datetime"] = raw_facts_data["publication_datetime"].astype(str)
+
+    # fill some of the values
+    raw_facts_data["origin"] = raw_facts_data.get("origin", origin)
+    raw_facts_data["author"] = raw_facts_data.get("author", None)
+    raw_facts_data["summary"] = raw_facts_data.get("summary", None)
+    raw_facts_data["data_file"] = raw_facts_data.get("data_file", None)
 
     # save to output file, ensure encoding
     raw_facts_data.to_json(output_file, lines=True, orient="records", force_ascii=False)
