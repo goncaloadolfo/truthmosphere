@@ -1,10 +1,10 @@
 import os
-import re
 from urllib.parse import parse_qs, urlparse
 
 import scrapy
 from scrapy.http import Response
 from truthmosphere.items import TruthmosphereItem
+from truthmosphere.utils import normalize_text
 
 
 class INEFactsSpider(scrapy.Spider):
@@ -37,10 +37,7 @@ class INEFactsSpider(scrapy.Spider):
         if is_content_page:
             item = TruthmosphereItem()
 
-            title_text = response.css(".linkpublicacoes_b::text").get()
-            clean_title = title_text.replace("\n", " ").replace("\r", " ").replace("\t", " ").strip()
-            clean_title = re.sub(" +", " ", clean_title)
-            item["title"] = clean_title
+            item["title"] = normalize_text(response.css(".linkpublicacoes_b::text").get())
 
             item["assessement_result"] = "Verdadeiro"
             item["category"] = response.css("#DESTAQUEStema option[selected]::text").get()
