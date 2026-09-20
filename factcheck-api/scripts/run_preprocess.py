@@ -1,13 +1,16 @@
 import asyncio
 import logging
+import os
 
 import fire
 import yaml
 from src.preprocessing import *  # noqa
 
+log_level = os.getenv("LOG_LEVEL", "INFO").upper()
+
 logging.basicConfig(
     format="%(asctime)s [%(levelname)s] %(message)s",
-    level=logging.INFO,
+    level=log_level,
     datefmt="%Y-%m-%d %H:%M:%S",
 )
 

@@ -5,9 +5,11 @@ import subprocess
 import fire
 import yaml
 
+log_level = os.getenv("LOG_LEVEL", "INFO").upper()
+
 logging.basicConfig(
     format="%(asctime)s [%(levelname)s] %(message)s",
-    level=logging.INFO,
+    level=log_level,
     datefmt="%Y-%m-%d %H:%M:%S",
 )
 
