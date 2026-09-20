@@ -37,7 +37,7 @@ def run_crawl(config_file: str):
     logger.info("Starting crawl process...")
     output_path = f"{working_dir}/{output_file}"
     subprocess.run(
-        f"cd src/crawling/truthmosphere  && scrapy crawl facts -o {output_path}",
+        f"cd src/crawling/truthmosphere && scrapy crawl {config['spider_name']} -o {output_path}",
         shell=True,
         check=True,
     )
