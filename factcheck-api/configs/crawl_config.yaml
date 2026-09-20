@@ -1,3 +1,4 @@
+max_items: 7
 concurrent_requests: 1
 download_delay: 2
 start_urls:
