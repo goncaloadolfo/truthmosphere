@@ -4,14 +4,11 @@ from urllib.parse import urlparse
 
 import scrapy
 from scrapy.http import HtmlResponse, Response
-from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
+from truthmosphere.browser import build_chrome_driver
 from truthmosphere.items import TruthmosphereItem
-from webdriver_manager.chrome import ChromeDriverManager
 
 FACT_TEMPLATE = Template(
     "O valor da serie '$serie_name' foi de $current_value em $current_date "
@@ -52,25 +49,7 @@ class BPStatFactsSpider(scrapy.Spider):
     def __init__(self, name=None, **kwargs):
         super().__init__(name, **kwargs)
 
-        # init chrome driver
-        chrome_options = Options()
-        chrome_options.add_argument("--headless")
-        chrome_options.add_argument("--disable-gpu")
-        chrome_options.add_argument("--no-sandbox")
-        chrome_options.add_argument("--disable-dev-shm-usage")
-        chrome_options.add_argument("--disable-extensions")
-        chrome_options.add_argument("--disable-background-timer-throttling")
-        chrome_options.add_argument("--disable-backgrounding-occluded-windows")
-        chrome_options.add_argument("--disable-renderer-backgrounding")
-        chrome_options.add_argument("--disable-features=TranslateUI")
-        chrome_options.add_argument("--disable-ipc-flooding-protection")
-        chrome_options.add_argument("--memory-pressure-off")
-        chrome_options.add_argument("--max_old_space_size=4096")
-
-        self.driver = webdriver.Chrome(
-            service=Service(ChromeDriverManager().install()),
-            options=chrome_options,
-        )
+        self.driver = build_chrome_driver()
 
     def closed(self, reason):
         self.driver.quit()
