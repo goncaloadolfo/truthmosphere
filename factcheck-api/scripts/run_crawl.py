@@ -33,6 +33,9 @@ def run_crawl(config_file: str):
         elif not isinstance(value, str):
             os.environ[f"TRUTHMOSPHERE_CRAWL_{key}".upper()] = str(value)
 
+        else:
+            os.environ[f"TRUTHMOSPHERE_CRAWL_{key}".upper()] = value
+
     # start crawl process
     logger.info("Starting crawl process...")
     output_path = f"{working_dir}/{output_file}"
