@@ -1,8 +1,5 @@
-operation_name: facts_fix_typos_preprocess
-input_file: data/processed/ine_1_facts_14_12_25.jsonl
-output_file: data/processed/ine_2_facts_20_12_25_fix_typos.jsonl
-fix_typos_model: gpt-4o-mini
-fix_typos_fields:
-  - explanation
-fuzzy_match_threshold: 97
-batch_size: 10
+operation_name: facts_raw_preprocess
+input_file: data/processed/poligrafo_3_facts_14_12_25_add_fields.jsonl
+output_file: data/processed/poligrafo_4_facts_21_12_25_add_fact_id.jsonl
+origin: Poligrafo
+date_format: "%d de %B de %Y %H:%M"
