@@ -1,3 +1,4 @@
+import json
 import logging
 
 import pandas as pd
@@ -40,9 +41,14 @@ def preprocess(input_file: str, output_file: str):
 
     # publication date
     raw_facts_data["publication_datetime"] = raw_facts_data["publication_date"].apply(parse_pt_datetime)
+    raw_facts_data["publication_datetime"] = raw_facts_data["publication_datetime"].astype(str)
 
-    # save to output file
-    raw_facts_data.to_json(output_file, orient="records", lines=True, force_ascii=False)
+    # save to output file, ensure encoding
+    with open(output_file, "w", encoding="utf-8") as f:
+        for record in raw_facts_data.to_dict(orient="records"):
+            json.dump(record, f)
+            f.write("\n")
+
     logger.info(f"Preprocessing completed. Output saved to {output_file}")
 
 
