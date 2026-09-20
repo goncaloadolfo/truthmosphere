@@ -11,13 +11,13 @@ import {
 const parseNewHTML = async (newHTML: string): Promise<NewParseResult> => {
   return {
     header: {
-      id: 'header',
+      selector: '.arr--story--headline-h1',
       content:
-        'Guerra na Ucrânia. EUA ameaçam abandonar esforços para acordo de paz em poucos dias',
+        'Agitação marítima, chuva e queda de neve. Há nove distritos sob aviso laranja',
     },
     contentElements: [
       {
-        id: 'content of the new',
+        selector: '.arr--story--content',
         content: newHTML,
       },
     ],
@@ -36,13 +36,7 @@ const classifyContent = async (
   content: string
 ): Promise<FactPredictionResult> => {
   return {
-    predictionResult: [
-      {
-        fact: 'fact',
-        newStatement: 'new statement',
-        verificationResult: false,
-      },
-    ],
+    verificationResult: false,
   }
 }
 
