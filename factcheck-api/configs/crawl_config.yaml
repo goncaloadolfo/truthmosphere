@@ -1,27 +1,17 @@
-spider_name: bpstat_facts
-concurrent_requests: 1
-download_delay: 5
+spider_name: pordata_facts
+extra_data_folder: /Users/goncaloadolfo/Documents/projects/truthmosphere/factcheck-api/data/raw/pordata_csv_run/
 
+concurrent_requests: 6
+download_delay: 4
+
+# the spider discovers themes -> subthemes -> statistic pages from each root,
+# so only the roots are needed here
 start_urls:
-  - https://bpstat.bportugal.pt/dominios/14
-  - https://bpstat.bportugal.pt/dominios/130
-  - https://bpstat.bportugal.pt/dominios/20
-  - https://bpstat.bportugal.pt/dominios/2
-  - https://bpstat.bportugal.pt/dominios/160
-  - https://bpstat.bportugal.pt/dominios/18
-  - https://bpstat.bportugal.pt/dominios/16
-  - https://bpstat.bportugal.pt/dominios/167
-  - https://bpstat.bportugal.pt/dominios/15
-  - https://bpstat.bportugal.pt/dominios/8
-  - https://bpstat.bportugal.pt/dominios/9
-  - https://bpstat.bportugal.pt/dominios/11
-  - https://bpstat.bportugal.pt/dominios/59
-  - https://bpstat.bportugal.pt/dominios/37
-  - https://bpstat.bportugal.pt/dominios/43
-  - https://bpstat.bportugal.pt/dominios/40
-  - https://bpstat.bportugal.pt/dominios/190
+  - https://www.pordata.pt/portugal
+  - https://www.pordata.pt/municipios
+  - https://www.pordata.pt/europa
 
 allowed_domains:
-  - bpstat.bportugal.pt
+  - www.pordata.pt
 
-output_file: data/raw/bpstat_facts_01_11_25.jsonl
+output_file: data/raw/pordata_facts_20_09_26.jsonl
