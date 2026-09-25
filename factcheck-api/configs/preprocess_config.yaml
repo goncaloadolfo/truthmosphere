@@ -1,32 +1,14 @@
-# Configuration for generating false claims via LLM perturbation
-# Run with: make preprocess config_file=configs/preprocess_config.yaml
+# Configuration for turning PORDATA statistics tables into true claims
 
-operation_name: generate_false_claims_preprocess
-input_file: data/processed/ine_3_facts_21_12_25_add_fact_id.jsonl
-output_file: data/processed/ine_4_false_claims_22_01_26.jsonl
+operation_name: pordata_generate_claims_preprocess
+input_file: data/raw/pordata_facts_20_09_26.jsonl
+output_file: data/processed/pordata_1_claims_25_09_26.jsonl
+data_folder: pordata_csv_run
 
-# LLM settings
-model: gpt-4o-mini # (via litellm)
-temperature: 0.7
+# how many of the most recent years of each series to keep
+recent_years: 1
 
-# Claim field to perturb (the main claim/title text)
-claim_field: title
+# cap on the claims a single statistic contributes (0 = no cap)
+max_claims_per_stat: 5
 
-# Perturbation strategies options to apply
-# Options: number, entity, causal, combined
-strategies:
-  - number
-  - entity
-  - causal
-  - combined
-
-# Validation thresholds
-length_tolerance: 0.25 # max ±25% word count deviation from original
-min_similarity: 40 # avoid complete rewrites
-max_similarity: 95 # avoid near-copies
-
-# Processing settings
-batch_size: 5
-
-# sample a subset
-sample_size: 2679
+seed: 0
