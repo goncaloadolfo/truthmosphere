@@ -1,14 +1,8 @@
-# Configuration for turning PORDATA statistics tables into true claims
+# Configuration for the base preprocessing of the PORDATA claims
+# adds fact_id, assessement_binary and publication_datetime
 
-operation_name: pordata_generate_claims_preprocess
-input_file: data/raw/pordata_facts_20_09_26.jsonl
-output_file: data/processed/pordata_1_claims_25_09_26.jsonl
-data_folder: pordata_csv_run
-
-# how many of the most recent years of each series to keep
-recent_years: 1
-
-# cap on the claims a single statistic contributes (0 = no cap)
-max_claims_per_stat: 5
-
-seed: 0
+operation_name: facts_raw_preprocess
+input_file: data/processed/pordata_1_claims_25_09_26.jsonl
+output_file: data/processed/pordata_2_facts_30_09_26.jsonl
+origin: PORDATA
+date_format: "%Y-%m-%d"
